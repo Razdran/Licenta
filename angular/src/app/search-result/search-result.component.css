@@ -1,0 +1,33 @@
+p{
+  color: #eeeeee;;
+}
+.result-wrapper{
+  height:50%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left mid right";
+}
+.eMag{
+  grid-area:left;
+  padding-left: 20px;
+  border-right: 3px solid white;
+}
+.flanco{
+  grid-area: mid;
+
+  padding-left: 20px;
+  border-right: 3px solid white;
+
+}
+.cell{
+
+  padding-left: 20px;
+  grid-area: right;
+
+}
+h1{
+  text-align: center;
+  color:deeppink;
+}

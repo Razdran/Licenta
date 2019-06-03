@@ -1,0 +1,50 @@
+<app-header></app-header>
+<head>
+  <meta http-equiv="X-Frame-Options" content="allow">
+</head>
+<input #searchText>
+<button (click)="search(searchText.value)">Find</button>
+
+<div class="result-wrapper">
+  <div class="eMag">
+    <h1> eMag result</h1>
+    <div *ngIf="item&&item2&&item3">
+      <iframe width="215" height="215" [src]="img | safe" frameBorder="0"
+              scrolling='no'>
+      </iframe>
+      <p>{{item.name}}</p>
+      <p>{{item.provider}}</p>
+      <p>{{item.description}}</p>
+      <p>{{item.category}}</p>
+    </div>
+  </div>
+
+  <div class="flanco">
+
+    <h1> flanco result</h1>
+    <div *ngIf="item&&item2&&item3">
+
+      <iframe width="215" height="215" [src]="img2 | safe" frameBorder="0"
+              scrolling='no'>
+      </iframe>
+      <p>{{item2.name}}</p>
+      <p>{{item2.provider}}</p>
+      <p>{{item2.description}}</p>
+      <p>{{item2.category}}</p>
+    </div>
+  </div>
+
+  <div class="cell">
+
+    <h1> cell result</h1>
+    <div *ngIf="item&&item2&&item3">
+
+      <img  [height]="215" [src]="img3">
+
+      <p>{{item3.name}}</p>
+      <p>{{item3.provider}}</p>
+      <p>{{item3.description}}</p>
+      <p>{{item3.category}}</p>
+    </div>
+  </div>
+</div>

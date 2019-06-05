@@ -31,3 +31,105 @@ h1{
   text-align: center;
   color:deeppink;
 }
+h2{
+  text-align: center;
+  color:deeppink;
+  font-size: 20px;
+}
+
+.card_wrapper {
+  width: 260px;
+  height: 400px;
+  background: white;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  transform: scale(0.9);
+  transition:  transform 0.5s;
+}
+.card_wrapper:hover {
+  transform: scale(1);
+}
+.card_main_content {
+  width: 100%;
+  height: 100%;
+}
+.card_image {
+  height: 80%;
+  width: 100%;
+  background: no-repeat center center;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+
+  border-bottom: 1px solid #313854;
+}
+card_main_content-info-right{
+  height: 100%;
+  width: 100%;
+  grid-area: br;
+
+}
+.card_main_content_info {
+  width: 100%;
+  height: 25%;
+  transition: transform 0.5s;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "bl br";
+  margin-top:20px;
+}
+.card_main_content_info-left {
+  height: 100%;
+  width: 100%;
+  background: #f4f4f4;
+
+  grid-area: br;
+}
+.card_wrapper-infoIcon {
+  z-index: 3;
+  background: #f4a688;
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  right: -10px;
+  border-radius: 0px 0px 200px 200px;
+  transition: all 0.5s, border-radius 2s, top 1s;
+  overflow: hidden;
+}
+.contents{
+  margin-top:50px;
+}
+.icon {
+  position: absolute;
+  left:10px;
+  color: white;
+  opacity: 1;
+}
+.card_wrapper-infoIcon:hover {
+  width: 100%;
+  right: 0;
+  bottom:40px;
+  border-radius: 0;
+  height: 80%;
+}
+.card_wrapper .card_wrapper-infoIcon:hover .icon {
+  opacity: 0;
+  right: 15px;
+  top: 15px;
+}
+
+.product-image{
+  max-height:80%;
+  max-width:80%;
+  padding-left:10%;
+  padding-top: 10%;
+}
+h3{
+  text-align: center;
+  font-size: 16px;
+  color:white;
+  border-bottom: #f4f4f4 1px solid;
+}

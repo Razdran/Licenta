@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{ScrappingServiceService} from "../services/scrappingService/scrapping-service.service";
 import { ViewEncapsulation, ViewChild, ElementRef, PipeTransform, Pipe} from '@angular/core';
 import { DomSanitizer } from "@angular/platform-browser";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Pipe({ name: 'safe' })
 export class SafePipe implements PipeTransform {
@@ -21,32 +22,55 @@ export class SearchResultComponent implements OnInit {
 
   constructor(private scrap:ScrappingServiceService) { }
   nameToSearch:string;
-  item:any;
-  item2:any;
-  item3:any;
-  img2:String;
-  img:String;
-  img3:String;
+  item:any[];
+  item2:any[];
+  item3:any[];
 
   search(text:string){
     this.nameToSearch=text;
     this.scrap.getItemFlanco(this.nameToSearch).subscribe(data =>{
       this.item2=data;
-      this.img2=data.image;
+      this.makePriceLookGood2();
     });
     this.scrap.getItem(this.nameToSearch).subscribe(data=>{
       this.item=data;
-      this.item.category=this.item.category.split(" ")[0].substring(0,this.item.category.split(" ")[0].length-2)+"."
-        +this.item.category.split(" ")[0].substring(this.item.category.split(" ")[0].length-2,this.item.category.split(" ")[0].length)
-       +" Lei";
-      this.img=data.image;
+      this.makePriceLookGood1();
+
     });
-    this.scrap.getItemCell(this.nameToSearch).subscribe(data =>{
+    this.scrap.getItemAltex(this.nameToSearch).subscribe(data =>{
       this.item3=data;
-      this.img3=data.image;
+      this.makePriceLookGood3();
     });
 
   }
+  makePriceLookGood1()
+  {
+   var i,j;
+   for(i=0; i<=this.item.length;i=i+1)
+   {
+     this.item[i].category=this.item[i].category.split("Lei")[0];
+     try{
+       this.item[i].category=this.item[i].category.substring(0,this.item[i].category.length-3);
+     }
+     catch (e) {
+        console.log(e);
+     }
+     this.item[i].category=this.item[i].category+" lei";
+   }
+  }
+  makePriceLookGood2()
+  {
+    var i;
+    for(i=0;i<this.item2.length;i++)
+      this.item2[i].category+=" lei";
+  }
+  makePriceLookGood3()
+  {
+    var i;
+    for(i=0;i<this.item3.length;i++)
+      this.item3[i].category=this.item3[i].category.split('l')[0]+" lei";
+  }
+
   ngOnInit() {
 
   }

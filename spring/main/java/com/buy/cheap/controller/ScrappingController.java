@@ -8,6 +8,8 @@ import com.buy.cheap.service.ScrappingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/scrapping")
 public class ScrappingController {
@@ -18,26 +20,26 @@ public class ScrappingController {
     }
 
 
-    @GetMapping(value="/{Searchedname}")
+    @GetMapping(value="/emag/{Searchedname}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ItemDAO getAll(@PathVariable String Searchedname){
-        ItemDAO item=scrappingService.getItemFromEmag(Searchedname);
+    public List<ItemDAO> getAll(@PathVariable String Searchedname){
+        List<ItemDAO> item=scrappingService.getItemFromEmag(Searchedname);
 
         return item;
     }
 
     @GetMapping(value="/flanco/{Searchedname}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ItemDAO getAllFlanco(@PathVariable String Searchedname){
-        ItemDAO item=scrappingService.getItemFromFlanco(Searchedname);
+    public List<ItemDAO> getAllFlanco(@PathVariable String Searchedname){
+        List<ItemDAO> item=scrappingService.getItemFromFlanco(Searchedname);
 
         return item;
     }
 
-    @GetMapping(value="/cell/{Searchedname}")
+    @GetMapping(value="/altex/{Searchedname}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ItemDAO getAllMediaGalaxy(@PathVariable String Searchedname){
-        ItemDAO item=scrappingService.getItemFromCell(Searchedname);
+    public List<ItemDAO> getAllAltex(@PathVariable String Searchedname){
+        List<ItemDAO> item=scrappingService.getItemFromAltex(Searchedname);
 
         return item;
     }

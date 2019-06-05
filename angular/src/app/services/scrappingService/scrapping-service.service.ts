@@ -9,12 +9,12 @@ export class ScrappingServiceService {
 
   constructor(private http: HttpClient) { }
   getItem(name:string): Observable<any> {
-    return this.http.get('//localhost:8080/scrapping/'+name);
+    return this.http.get('//localhost:8080/scrapping/emag/'+name);
   }
   getItemFlanco(name:string):Observable<any>{
     return this.http.get('//localhost:8080/scrapping/flanco/'+name);
   }
-  getItemCell(name:string):Observable<any>{
-    return this.http.get('//localhost:8080/scrapping/cell/'+name);
+  getItemAltex(name:string):Observable<any>{
+    return this.http.get('//localhost:8080/scrapping/altex/'+name);
   }
 }

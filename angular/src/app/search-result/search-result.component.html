@@ -8,43 +8,86 @@
 <div class="result-wrapper">
   <div class="eMag">
     <h1> eMag result</h1>
-    <div *ngIf="item&&item2&&item3">
-      <iframe width="215" height="215" [src]="img | safe" frameBorder="0"
-              scrolling='no'>
-      </iframe>
-      <p>{{item.name}}</p>
-      <p>{{item.provider}}</p>
-      <p>{{item.description}}</p>
-      <p>{{item.category}}</p>
+    <div class="card_wrapper" *ngFor="let aux of item">
+      <div class="card_main_content">
+        <div class="card_image">
+          <img class="product-image"[src]="aux.image">
+        </div>
+        <div class="card_main_content_info">
+          <div class="card_main_content-info-left">
+            <h2>{{aux.category}}</h2>
+          </div>
+          <img class="card_main_content-info-right" width="150" src="https://s12emagst.akamaized.net/layout/ro/images/logo//38/57629.png">
+
+        </div>
+      </div>
+      <div class="card_wrapper-infoIcon">
+        <div class="icon">Info</div>
+        <div class="contents">
+          <h3>{{aux.name}}</h3>
+          <h3>{{aux.provider}}</h3>
+          <h3>{{aux.description}}</h3>
+          <h3>{{aux.category}}</h3>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="flanco">
 
     <h1> flanco result</h1>
-    <div *ngIf="item&&item2&&item3">
+    <div class="card_wrapper" *ngFor="let aux of item2">
+      <div class="card_main_content">
+        <div class="card_image">
+          <img class="product-image"[src]="aux.image">
+        </div>
+        <div class="card_main_content_info">
+          <div class="card_main_content-info-left">
+            <h2>{{aux.category}}</h2>
+          </div>
+          <img class="card_main_content-info-right" width="150" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flanco_logo.svg">
 
-      <iframe width="215" height="215" [src]="img2 | safe" frameBorder="0"
-              scrolling='no'>
-      </iframe>
-      <p>{{item2.name}}</p>
-      <p>{{item2.provider}}</p>
-      <p>{{item2.description}}</p>
-      <p>{{item2.category}}</p>
+        </div>
+      </div>
+      <div class="card_wrapper-infoIcon">
+        <div class="icon">Info</div>
+        <div class="contents">
+          <h3>{{aux.name}}</h3>
+          <h3>{{aux.provider}}</h3>
+          <h3>{{aux.description}}</h3>
+          <h3>{{aux.category}}</h3>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="cell">
+  <div class="cel">
 
-    <h1> cell result</h1>
-    <div *ngIf="item&&item2&&item3">
+    <h1> altex result</h1>
 
-      <img  [height]="215" [src]="img3">
+    <div class="card_wrapper" *ngFor="let aux of item3">
+      <div class="card_main_content">
+        <div class="card_image">
+          <img class="product-image"[src]="aux.image">
+        </div>
+        <div class="card_main_content_info">
+          <div class="card_main_content-info-left">
+            <h2>{{aux.category}}</h2>
+          </div>
+          <img class="card_main_content-info-right" width="150" src="https://upload.wikimedia.org/wikipedia/ro/9/9d/Logo_Altex.svg">
 
-      <p>{{item3.name}}</p>
-      <p>{{item3.provider}}</p>
-      <p>{{item3.description}}</p>
-      <p>{{item3.category}}</p>
+        </div>
+      </div>
+      <div class="card_wrapper-infoIcon">
+        <div class="icon">Info</div>
+        <div class="contents">
+            <h3>{{aux.name}}</h3>
+            <h3>{{aux.provider}}</h3>
+            <h3>{{aux.description}}</h3>
+            <h3>{{aux.category}}</h3>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

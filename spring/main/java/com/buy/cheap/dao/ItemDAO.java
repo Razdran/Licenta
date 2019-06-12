@@ -13,6 +13,15 @@ public class ItemDAO implements Serializable {
     private String provider;
     private String image;
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    private String code;
     public String getImage() {
         return image;
     }

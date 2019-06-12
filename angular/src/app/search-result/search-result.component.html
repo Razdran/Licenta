@@ -3,12 +3,16 @@
   <meta http-equiv="X-Frame-Options" content="allow">
 </head>
 <input #searchText>
-<button (click)="search(searchText.value)">Find</button>
+<button (click)="order(searchText.value)">Find</button>
+
+<button (click)="orderItems()">Order</button>
+<button (click)="prettyOrder()">Pretty Order</button>
+<button (click)="LevenshteinOrder()">Levenshtein</button>
 
 <div class="result-wrapper">
   <div class="eMag">
     <h1> eMag result</h1>
-    <div class="card_wrapper" *ngFor="let aux of item">
+    <div class="card_wrapper" *ngFor="let aux of itemEmag">
       <div class="card_main_content">
         <div class="card_image">
           <img class="product-image"[src]="aux.image">
@@ -36,7 +40,7 @@
   <div class="flanco">
 
     <h1> flanco result</h1>
-    <div class="card_wrapper" *ngFor="let aux of item2">
+    <div class="card_wrapper" *ngFor="let aux of itemFlanco">
       <div class="card_main_content">
         <div class="card_image">
           <img class="product-image"[src]="aux.image">
@@ -65,7 +69,7 @@
 
     <h1> altex result</h1>
 
-    <div class="card_wrapper" *ngFor="let aux of item3">
+    <div class="card_wrapper" *ngFor="let aux of itemAltex">
       <div class="card_main_content">
         <div class="card_image">
           <img class="product-image"[src]="aux.image">

@@ -19,6 +19,7 @@ p{
 
   padding-left: 20px;
   border-right: 3px solid white;
+  background-clip: padding-box;
 
 }
 .cell{
@@ -29,11 +30,11 @@ p{
 }
 h1{
   text-align: center;
-  color:deeppink;
+  color:#05607f;
 }
 h2{
   text-align: center;
-  color:deeppink;
+  color:#05607f;
   font-size: 20px;
 }
 

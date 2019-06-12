@@ -1,12 +1,13 @@
 .header-wrapper {
-  background-color: #313854;
+
+  background-color: #319177 ;
   padding: 10px 0 15px;
 
   font-weight: 300;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 40px;
-  color: #eee;
+  color: rgb(0, 45, 60);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 50px;
@@ -30,5 +31,6 @@
 a{
 
   text-align: center;
-  color:#eee;
+  color:rgb(0, 45, 60);
+  text-decoration: none;
 }

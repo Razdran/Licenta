@@ -60,16 +60,19 @@ public class ScrappingService {
                     Element img = imgWrapper.select("img").first();
                     String src = img.attr("data-src");
                     aux.setImage(src);
-
+                    String codeWrapper=content.getElementsByClass("thumbnail-wrapper js-product-url").attr("href").toLowerCase();
+                    String[] codeArray=codeWrapper.split("/pd/")[0].split("-");
+                    codeWrapper=codeArray[codeArray.length-1];
+                    aux.setCode(codeWrapper);
+                     System.out.println("eMag: "+codeWrapper);
                     if(titleMatchSearch(name,aux.getName())) {
                         result.add(aux);
                         i++;
                     }
-                    if(i==20)
-                        break;
 
 
                 }
+                 driver.quit();
             return result;
         }
 
@@ -116,10 +119,9 @@ public class ScrappingService {
                         i++;
                     }
                 }
-                if(i==20)
-                    break;
 
             }
+            driver.quit();
             return result;
         }
 
@@ -149,6 +151,8 @@ public class ScrappingService {
 
                 ItemDAO aux=new ItemDAO();
                 aux.setName(content.getElementsByClass("Product-name").first().text());
+                aux.setCode(content.getElementsByClass("Product-name").attr("href").toLowerCase().split("/cpd/")[1]);
+                System.out.println("Altex: "+aux.getCode());
                 aux.setCategory(content.getElementsByClass("Price-int").first().text());
                 aux.setProvider("Altex");
                 aux.setDescription(content.getElementsByClass("Status").first().text());
@@ -164,10 +168,8 @@ public class ScrappingService {
                         i++;
                     }
                 }
-                if(i==20)
-                    break;
-
             }
+            driver.quit();
             return result;
         }
 

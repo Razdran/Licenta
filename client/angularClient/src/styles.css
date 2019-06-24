@@ -1,0 +1,32 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html {
+  min-height: 100%;
+  max-width: 100%;
+}
+
+body {
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  background-color: #ffeedb;
+  font-family: 'Open Sans', sans-serif;
+}
+app-login-page{
+  height: 100%;
+  width: 100%;
+
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+app-create-account-page{
+  height: 100%;
+  width: 100%;
+
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

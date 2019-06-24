@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.header-wrapper {
+  margin: 0;
+  margin-bottom: 10px;
+  background-color: #319177 ;
+
+  font-weight: 100;
+
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-rows: 50px;
+  grid-template-areas: "logo search profile";
+}
+.logo{
+  display: flex;
+  justify-content: space-around;
+  grid-area: logo;
+  font-size: 40px;
+  text-align: center;
+}
+.search{
+  grid-area: search;
+
+  justify-content: space-around;
+  text-align: center;
+  font-size: 40px;
+
+}
+.profile{
+  grid-area: profile;
+  font-size: 40px;
+  justify-content: space-around;
+  text-align: center;
+}
+
+a{
+  text-align: center;
+  color:white;
+  text-decoration: none;
+}
+

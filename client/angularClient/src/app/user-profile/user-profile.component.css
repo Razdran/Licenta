@@ -1,0 +1,49 @@
+.profile_wrapper{
+  margin-left:10%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+  min-height: 100%;
+  width: 80%;
+  grid-template-areas: "left right";
+  border:2px solid black;
+  border-radius:50px;
+  padding:25px 25px;
+  background-color: #319177;
+}
+
+.user_info{
+  grid-area: left;
+  text-align: center;
+  border-right:1.5px solid black;
+  padding-right:25px;
+  font-family: fantasy;
+}
+.name{
+  font-size: 60px;
+  font-weight: bold;
+  padding-top:0px ;
+  padding-bottom: 0px;
+  line-height:1em;
+  font-weight: bold;
+}
+.favorites{
+
+  grid-area: right;
+}
+.user_info p{
+  display: block;
+}
+.favorites h1{
+  text-align: center;
+}
+.favList{
+  width:80%;
+  margin-left:15%;
+}
+p{
+  margin:5px;
+  padding: 0;
+  font-size: 30px;
+
+}

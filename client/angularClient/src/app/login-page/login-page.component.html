@@ -1,0 +1,15 @@
+<div class="pageWrapper">
+  <div class="login-wrapper">
+    <div class="form-wrapper">
+      <h1>Login</h1>
+      <form class="form-input-area">
+        <input #emailIn type="text" placeholder="email"/>
+        <input #pass type="password" placeholder="password"/>
+        <div class="btn">
+          <button type="button" (click)="login(emailIn.value,pass.value)">Login</button>
+          <button type="button" (click)="createAccount()">Create an account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

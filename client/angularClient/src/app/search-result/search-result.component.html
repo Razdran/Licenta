@@ -1,0 +1,108 @@
+<app-header></app-header>
+<head>
+  <meta http-equiv="X-Frame-Options" content="allow">
+</head>
+<form class="search_container">
+  <input #searchText type="text" id="search_input" placeholder="What do you want to buy today?">
+  <a (click)="order(searchText.value)" class="search_icon">
+    <mat-icon>search</mat-icon>
+  </a>
+</form>
+<button (click)="LevenshteinOrder()">leven</button>
+
+
+<div class="result-wrapper">
+  <div class="eMag">
+    <h1> eMag result</h1>
+    <div class="card_wrapper" *ngFor="let aux of itemEmag">
+      <div class="card_main_content">
+        <div class="card_image">
+          <img class="product-image"[src]="aux.image">
+        </div>
+        <div class="card_main_content_info">
+          <div class="card_main_content-info-left">
+            <h2>{{aux.stringPrice}}</h2>
+          </div>
+          <img class="card_main_content-info-right" width="150" src="https://s12emagst.akamaized.net/layout/ro/images/logo//38/57629.png">
+
+        </div>
+      </div>
+      <div class="card_wrapper-infoIcon">
+        <div class="icon">Info</div>
+        <div class="contents">
+          <h3>{{aux.name}}</h3>
+          <h3>{{aux.provider}}</h3>
+          <h3>{{aux.description}}</h3>
+          <h3>{{aux.stringPrice}}</h3>
+          <a class="addToFav" (click)="addToFav(aux.id)">
+            <mat-icon>favorite_border</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flanco">
+
+    <h1> flanco result</h1>
+    <div class="card_wrapper" *ngFor="let aux of itemFlanco">
+      <div class="card_main_content">
+        <div class="card_image">
+          <img class="product-image"[src]="aux.image">
+        </div>
+        <div class="card_main_content_info">
+          <div class="card_main_content-info-left">
+            <h2>{{aux.stringPrice}}</h2>
+          </div>
+          <img class="card_main_content-info-right" width="150" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flanco_logo.svg">
+
+        </div>
+      </div>
+      <div class="card_wrapper-infoIcon">
+        <div class="icon">Info</div>
+        <div class="contents">
+          <h3>{{aux.name}}</h3>
+          <h3>{{aux.provider}}</h3>
+          <h3>{{aux.description}}</h3>
+          <h3>{{aux.stringPrice}}</h3>
+          <a class="addToFav" (click)="addToFav(aux.id)">
+            <mat-icon>favorite_border</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cel">
+
+    <h1> altex result</h1>
+
+    <div class="card_wrapper" *ngFor="let aux of itemAltex">
+      <div class="card_main_content">
+        <div class="card_image">
+          <img class="product-image"[src]="aux.image">
+        </div>
+        <div class="card_main_content_info">
+          <div class="card_main_content-info-left">
+            <h2>{{aux.stringPrice}}</h2>
+          </div>
+          <img class="card_main_content-info-right" width="150" src="https://upload.wikimedia.org/wikipedia/ro/9/9d/Logo_Altex.svg">
+
+        </div>
+      </div>
+      <div class="card_wrapper-infoIcon">
+        <div class="icon">Info</div>
+        <div class="contents">
+            <h3>{{aux.name}}</h3>
+            <h3>{{aux.provider}}</h3>
+            <h3>{{aux.description}}</h3>
+            <h3>{{aux.stringPrice}}</h3>
+            <a class="addToFav" (click)="addToFav(aux.id)">
+            <mat-icon>favorite_border</mat-icon>
+            </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

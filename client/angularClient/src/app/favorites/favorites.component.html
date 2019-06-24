@@ -1,0 +1,55 @@
+
+<div class="card_wrapper" *ngFor="let aux of favList">
+  <div class="card_main_content" *ngIf="aux.provider=='eMag'">
+    <div class="card_image">
+      <img class="product-image"[src]="aux.image">
+    </div>
+    <div class="card_main_content_info">
+      <div class="card_main_content-info-left">
+        <h2>{{aux.stringPrice}}</h2>
+      </div>
+
+      <img class="card_main_content-info-right" width="150" src="https://s12emagst.akamaized.net/layout/ro/images/logo//38/57629.png">
+
+    </div>
+  </div>
+
+  <div class="card_main_content" *ngIf="aux.provider=='Altex'">
+    <div class="card_image">
+      <img class="product-image"[src]="aux.image">
+    </div>
+    <div class="card_main_content_info">
+      <div class="card_main_content-info-left">
+        <h2>{{aux.stringPrice}} lei</h2>
+      </div>
+
+      <img class="card_main_content-info-right" width="150" src="https://upload.wikimedia.org/wikipedia/ro/9/9d/Logo_Altex.svg">
+
+    </div>
+  </div>
+
+  <div class="card_main_content" *ngIf="aux.provider=='Flanco'">
+    <div class="card_image">
+      <img class="product-image"[src]="aux.image">
+    </div>
+    <div class="card_main_content_info">
+      <div class="card_main_content-info-left">
+        <h2>{{aux.stringPrice}}</h2>
+      </div>
+
+      <img class="card_main_content-info-right" width="150" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flanco_logo.svg">
+
+    </div>
+  </div>
+  <div class="card_wrapper-infoIcon">
+    <div class="icon">Info</div>
+    <div class="contents">
+      <h3>{{aux.name}}</h3>
+      <h3>{{aux.provider}}</h3>
+      <h3>{{aux.description}}</h3>
+      <h3>{{aux.stringPrice}}</h3>
+      <button class="remove" (click)="remove(aux.id)">Remove from favorites</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="pageWrapper">
+  <div class="login-wrapper">
+    <div class="form-wrapper">
+      <h1>Create account</h1>
+      <form class="form-input-area">
+        <input #emailIn type="text" placeholder="email"/>
+        <input #nameIn type="text" placeholder="name"/>
+        <input #surnameIn type="text" placeholder="surname"/>
+        <input #ageIn type="number" placeholder="age"/>
+        <input #passIn type="password" placeholder="password"/>
+        <div class="btn">
+          <button type="button" (click)="createAccount(emailIn.value,nameIn.value,surnameIn.value,ageIn.value,passIn.value)">Create Account</button>
+          <button type="button" (click)="login()">Go to login instead?</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

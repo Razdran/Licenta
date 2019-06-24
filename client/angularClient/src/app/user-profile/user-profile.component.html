@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="profile_wrapper" *ngIf="loggedUser">
+  <div class="user_info">
+
+    <div class="card_image">
+      <img class="product-image" src="https://img.icons8.com/bubbles/2x/user.png">
+    </div>
+    <p class="name"> {{loggedUser.name}}</p>
+    <p class="name">{{loggedUser.surname}}</p>
+    <hr>
+    <p>Age:</p>
+    <p>{{loggedUser.age}}</p>
+    <hr>
+    <p>Email:</p>
+    <p>{{loggedUser.email}}</p>
+    <hr>
+    <button (click)="logOut()">Log Out</button>
+  </div>
+  <div class="favorites">
+    <div class="favList">
+      <h1>Favorite products</h1>
+      <app-favorites></app-favorites>
+    </div>
+  </div>
+</div>

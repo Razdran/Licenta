@@ -66,7 +66,7 @@ public class UserController {
         return userService.CreateAccount(requestParams.get("email"),
                 requestParams.get("name"),
                 requestParams.get("surname"),
-                Integer.parseInt(requestParams.get("age")),
+                requestParams.get("age"),
                 requestParams.get("password"));
     }
 

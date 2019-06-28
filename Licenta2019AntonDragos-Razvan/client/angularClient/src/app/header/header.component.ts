@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
     this.userService.getUserByEmail(this.shared.emailForLoggedInUser).subscribe((data=>{
       this.result=data;
-      this.name=this.result.name+" "+this.result.surname;
+      this.name=this.result.surname;
       this.shared.name=this.name;
     }));
   }

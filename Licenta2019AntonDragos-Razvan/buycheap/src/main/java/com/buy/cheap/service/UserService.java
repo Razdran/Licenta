@@ -7,11 +7,13 @@ import com.buy.cheap.model.Favorite;
 import com.buy.cheap.model.User;
 import com.buy.cheap.repository.FavoriteJpaRepository;
 import com.buy.cheap.repository.UserJpaRepository;
+import com.google.common.hash.Hashing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.parsing.FailFastProblemReporter;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.UserDataHandler;
 
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @Service
@@ -49,6 +51,7 @@ public class UserService {
         List<User> allUsers = this.getAllFromDatabase();
 
         Boolean ok=true;
+        password= Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
         for (User aux:allUsers) {
             if(aux.getEmail().equals(email)){
                 if(!aux.getPassword().equals(password))
@@ -59,7 +62,7 @@ public class UserService {
         }
         return "No account for this email";
     }
-    public String CreateAccount(String email,String name, String surname,Integer age,String password){
+    public String CreateAccount(String email,String name, String surname,String age,String password){
         List<User> allUsers =this.getAllFromDatabase();
 
         for (User aux:allUsers) {

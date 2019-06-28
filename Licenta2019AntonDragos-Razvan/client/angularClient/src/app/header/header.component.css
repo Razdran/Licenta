@@ -22,23 +22,33 @@
   text-align: center;
 }
 .search{
+  display: flex;
   grid-area: search;
-
   justify-content: space-around;
-  text-align: center;
-  font-size: 40px;
-
 }
 .profile{
   grid-area: profile;
-  font-size: 40px;
-  justify-content: space-around;
-  text-align: center;
 }
 
 a{
-  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 50px 1fr;
+  grid-template-areas: "profilelogo profilename";
   color:white;
   text-decoration: none;
 }
-
+.profileName{
+  grid-area: profilename;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  display:inline-block;
+  font-size: 35px;
+}
+.profile_logo{
+  grid-area: profilelogo;
+  display: inline-block;
+  font-size: 45px;
+  padding-right: 25px;
+}

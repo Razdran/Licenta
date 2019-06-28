@@ -20,6 +20,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { CreateAccountPageComponent } from './create-account-page/create-account-page.component';
 import {MatButtonModule,MatSnackBarModule} from '@angular/material'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material';
 import {MatIconModule} from "@angular/material";
 
 
@@ -46,7 +47,8 @@ import {MatIconModule} from "@angular/material";
     BrowserAnimationsModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [ItemServiceService,UserServiceService,FavoriteServiceService,ScrappingServiceService],
   bootstrap: [AppComponent]

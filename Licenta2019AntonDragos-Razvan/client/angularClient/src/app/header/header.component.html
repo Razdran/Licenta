@@ -1,20 +1,19 @@
 <div class="header-wrapper">
   <div class="logo">
     <a routerLink="/home">
-      <mat-icon>label_off</mat-icon>
-      BuyCheap
+      <img class="providers_img_svg" height="45px" src="../../assets/logo.png">
     </a>
   </div>
   <div class="search">
     <a routerLink="/search-result">
-      <mat-icon>search</mat-icon>
-      Search
+      <img class="providers_img_svg" height="45px" src="../../assets/compare3.png">
     </a>
   </div>
+
   <div class="profile">
     <a routerLink="/profile">
-      <mat-icon>account_circle</mat-icon>
-      {{name}}
+      <mat-icon class="profile_logo">account_circle</mat-icon>
+      <p class="profileName">{{name}}</p>
     </a>
   </div>
 </div>

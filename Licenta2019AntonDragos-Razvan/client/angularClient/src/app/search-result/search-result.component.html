@@ -8,9 +8,8 @@
     <mat-icon>search</mat-icon>
   </a>
 </form>
-<button (click)="LevenshteinOrder()">leven</button>
 
-
+<div *ngIf="!isLoading">
 <div class="result-wrapper">
   <div class="eMag">
     <h1> eMag result</h1>
@@ -112,4 +111,13 @@
     </div>
 
   </div>
+</div>
+</div>
+<div *ngIf="isLoading"style="display: flex; justify-content: center; align-items: center; margin-top:100px;">
+  <mat-progress-spinner
+    color="primary"
+    mode="indeterminate">
+  </mat-progress-spinner>
+
+
 </div>

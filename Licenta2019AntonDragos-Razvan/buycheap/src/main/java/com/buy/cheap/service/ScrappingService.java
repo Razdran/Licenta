@@ -57,7 +57,7 @@ public class ScrappingService {
             String price=content.getElementsByClass("product-new-price")
                     .text();
             price=price.replace(".","");
-            aux.setStringPrice(price.substring(0,price.length()-6));
+            if(price.length()>=6)aux.setStringPrice(price.substring(0,price.length()-6));
 
             Element imgWrapper = content.getElementsByClass("thumbnail").first();
             Element img = imgWrapper.select("img").first();
@@ -105,7 +105,7 @@ public class ScrappingService {
                 aux.setName(content.getElementsByClass("produs-title").text());
                 String price;
                 price=content.getElementsByClass("price").text().split(" ")[0];
-                price=price.substring(0,price.length()-3);
+                if(price.length()>=3)price=price.substring(0,price.length()-3);
                 price=price.replace(".","");
                 aux.setStringPrice(price);
                 aux.setProvider("Flanco");

@@ -7,7 +7,7 @@ public class UserDAO implements Serializable {
     private Long id;
     private String name;
     private String surname;
-    private Integer age;
+    private String age;
     private String email;
     private String password;
     private Long favoriteId;
@@ -36,10 +36,10 @@ public class UserDAO implements Serializable {
         this.surname = surname;
     }
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

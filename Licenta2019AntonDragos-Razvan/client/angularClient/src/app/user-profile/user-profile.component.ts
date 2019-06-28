@@ -17,6 +17,7 @@ export class UserProfileComponent implements OnInit {
   constructor(private shared:SharedDataService,private router:Router,private userService:UserServiceService,private favService:FavoriteServiceService) { }
 
   ngOnInit() {
+
     this.numberExist=false;
     if(this.shared.logedIn!=true)
       this.router.navigateByUrl('');

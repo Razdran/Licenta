@@ -11,7 +11,7 @@ public class Favorite {
     private Long id;
     private Integer noOfFavorites;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Item> items;
 
     public Favorite() {

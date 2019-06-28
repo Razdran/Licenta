@@ -3,6 +3,7 @@ package com.buy.cheap.service;
 import com.buy.cheap.model.Item;
 import com.buy.cheap.repository.ItemJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -11,7 +12,7 @@ import java.util.Optional;
 @Service
 public class ItemService {
     private ItemJpaRepository itemJpaRepository;
-
+    private ItemService itemService;
     @Autowired
     public ItemService(ItemJpaRepository itemJpaRepository) {
         this.itemJpaRepository = itemJpaRepository;
@@ -20,7 +21,13 @@ public class ItemService {
     public Item addToDatabasa(Item item) {
         return itemJpaRepository.save(item);
     }
-
+    public Item updatePriceAndStatus(Long idProdus,String newPrice,String newStatus){
+        Item item=this.getByIdFromDatabase(idProdus);
+        item.setStringPrice(newPrice);
+        item.setDescription(newStatus);
+        itemJpaRepository.save(item);
+        return this.getByIdFromDatabase(idProdus);
+    }
     public Item getByIdFromDatabase(Long id) {
         Optional<Item> itemOptional = itemJpaRepository.findById(id);
         if (itemOptional.isPresent()) {

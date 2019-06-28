@@ -2,7 +2,9 @@
 <div class="card_wrapper" *ngFor="let aux of favList">
   <div class="card_main_content" *ngIf="aux.provider=='eMag'">
     <div class="card_image">
-      <img class="product-image"[src]="aux.image">
+      <a [href]="aux.productURL">
+        <img class="product-image"[src]="aux.image">
+      </a>
     </div>
     <div class="card_main_content_info">
       <div class="card_main_content-info-left">
@@ -16,7 +18,9 @@
 
   <div class="card_main_content" *ngIf="aux.provider=='Altex'">
     <div class="card_image">
-      <img class="product-image"[src]="aux.image">
+      <a [href]="aux.productURL">
+        <img class="product-image"[src]="aux.image">
+      </a>
     </div>
     <div class="card_main_content_info">
       <div class="card_main_content-info-left">
@@ -30,7 +34,9 @@
 
   <div class="card_main_content" *ngIf="aux.provider=='Flanco'">
     <div class="card_image">
-      <img class="product-image"[src]="aux.image">
+      <a [href]="aux.productURL">
+        <img class="product-image"[src]="aux.image">
+      </a>
     </div>
     <div class="card_main_content_info">
       <div class="card_main_content-info-left">

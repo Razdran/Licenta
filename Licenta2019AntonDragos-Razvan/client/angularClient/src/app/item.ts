@@ -22,5 +22,6 @@ export class Item
   rating:number;
   provider:string;
   image:string;
+  productCode:string;
 
 }

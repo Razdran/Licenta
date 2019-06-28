@@ -40,7 +40,7 @@ export class SearchResultComponent implements OnInit {
   emagOrdered:any[]=[];
   flancoOrdered:any[]=[];
   altexOrdered:any[]=[];
-
+  customEmptyItem : any;
   aux:string[];
   scoreAltex:number[]=[];
 
@@ -76,13 +76,6 @@ export class SearchResultComponent implements OnInit {
    if(this.itemEmag!=null)
    for(i=0; i<=this.itemEmag.length;i=i+1)
    {
-     this.itemEmag[i].stringPrice=this.itemEmag[i].stringPrice.split("Lei")[0];
-     try{
-       this.itemEmag[i].stringPrice=this.itemEmag[i].stringPrice.substring(0,this.itemEmag[i].stringPrice.length-3);
-     }
-     catch (e) {
-        console.log(e);
-     }
      this.itemEmag[i].stringPrice=this.itemEmag[i].stringPrice+" lei";
    }
   }
@@ -337,13 +330,63 @@ export class SearchResultComponent implements OnInit {
   }
   altexLevenshteinOrdered:any[]=[];
   flancoLevenshteinOrdered:any[]=[];
+  emagLevenshteinOrdered:any[]=[];
+  lineScore:number[]=[];
+  linePosition:number[]=[];
+  nrLines:number;
   LevenshteinOrder() {
+    this.nrLines=0;
     this.altexLevenshteinOrdered=[];
     this.flancoLevenshteinOrdered=[];
-    var i = 0;
+    var i = 0,j;
     var min = 10000;
     var gasit = -1;
+
     var emg;
+    for (emg = 0; emg < this.itemEmag.length; emg++) {
+      min=10000;
+      gasit=-1;
+      for (i = 0; i <= this.itemFlanco.length; i++) {
+        if (this.itemEmag[emg] != null && this.itemFlanco[i] != null)
+          var result = this.levenshtein(this.itemEmag[emg].name.toLowerCase(), this.itemFlanco[i].name.toLowerCase());
+        if (result < min) {
+          min = result;
+          gasit = i;
+        }
+      }
+      if(gasit<0)
+        gasit=0;
+      this.linePosition.push(emg);
+      this.lineScore.push(min);
+      var localRes = new Item();
+      if(min>this.itemEmag[emg].name.length/1){
+        localRes.name="Nothing found";
+        localRes.stringPrice="0 lei";
+        localRes.provider="Flanco";
+        localRes.description="No description";
+        localRes.image="https://www.mag-manager.com/wp-content/gallery/magento-product-export-to-ebay/no-magento-product-found.jpg";
+      }
+      else {
+        localRes.name = this.itemFlanco[gasit].name;
+        localRes.stringPrice = this.itemFlanco[gasit].stringPrice;
+        localRes.provider = this.itemFlanco[gasit].provider;
+        localRes.description = this.itemFlanco[gasit].description;
+        localRes.image = this.itemFlanco[gasit].image;
+        localRes.productURL=this.itemFlanco[gasit].productURL;
+        localRes.productCode=this.itemFlanco[gasit].productCode;
+      }
+      this.flancoLevenshteinOrdered.push(localRes);
+
+      console.log(" coduri produse emg, flanco de pe linia "+emg+": "+this.itemEmag[emg].productCode+", " +this.flancoLevenshteinOrdered[this.flancoLevenshteinOrdered.length-1].productCode);
+    }
+
+
+    /*
+          ^
+          |
+          |
+        flanco
+     */
     for (emg = 0; emg < this.itemEmag.length; emg++) {
       min=10000;
       gasit=-1;
@@ -358,15 +401,27 @@ export class SearchResultComponent implements OnInit {
       if(gasit<0)
         gasit=0;
       var localRes = new Item();
-      localRes.name = this.itemAltex[gasit].name;
-      localRes.stringPrice = this.itemAltex[gasit].stringPrice;
-      localRes.provider = this.itemAltex[gasit].provider;
-      localRes.description = this.itemAltex[gasit].description;
-      localRes.image = this.itemAltex[gasit].image;
-      this.altexLevenshteinOrdered.push(localRes);
+      this.lineScore[emg]+=min;
+      if(min>this.itemEmag[emg].name.length/1){
+       localRes.name="Nothing found";
+       localRes.stringPrice="0 lei";
+       localRes.provider="Altex";
+       localRes.description="No description";
+       localRes.image="https://www.mag-manager.com/wp-content/gallery/magento-product-export-to-ebay/no-magento-product-found.jpg";
+      }
+      else {
 
+        localRes.name = this.itemAltex[gasit].name;
+        localRes.stringPrice = this.itemAltex[gasit].stringPrice;
+        localRes.provider = this.itemAltex[gasit].provider;
+        localRes.description = this.itemAltex[gasit].description;
+        localRes.image = this.itemAltex[gasit].image;
+        localRes.productURL=this.itemAltex[gasit].productURL;
+        localRes.productCode=this.itemAltex[gasit].productCode;
+      }
+      this.altexLevenshteinOrdered.push(localRes);
+      console.log(" coduri produse emg, altex de pe linia "+emg+": "+this.itemEmag[emg].productCode+", " +this.altexLevenshteinOrdered[this.altexLevenshteinOrdered.length-1].productCode);
     }
-    this.itemAltex=this.altexLevenshteinOrdered;
 
     /*
           ^
@@ -374,41 +429,39 @@ export class SearchResultComponent implements OnInit {
           |
         altex
      */
+    var auxPos;
+    var auxScore;
+    var k;
 
+    for(j=0;j<this.lineScore.length-1;j++){
+      for(k=j+1;k<this.lineScore.length;k++){
+        if(this.lineScore[k]<this.lineScore[j])
+        {
+          auxScore=this.lineScore[k];
+          this.lineScore[k]=this.lineScore[j];
+          this.lineScore[j]=auxScore;
 
-    for (emg = 0; emg < this.itemEmag.length; emg++) {
-      min=10000;
-      gasit=-1;
-      for (i = 0; i <= this.itemFlanco.length; i++) {
-        if (this.itemEmag[emg] != null && this.itemFlanco[i] != null)
-          var result = this.levenshtein(this.itemEmag[emg].name.toLowerCase(), this.itemFlanco[i].name.toLowerCase());
-        if (result < min) {
-          min = result;
-          gasit = i;
+          auxPos=this.linePosition[k];
+          this.linePosition[k]=this.linePosition[j];
+          this.linePosition[j]=auxPos;
         }
       }
-      if(gasit<0)
-        gasit=0;
-      var localRes = new Item();
-      localRes.name = this.itemFlanco[gasit].name;
-      localRes.stringPrice = this.itemFlanco[gasit].stringPrice;
-      localRes.provider = this.itemFlanco[gasit].provider;
-      localRes.description = this.itemFlanco[gasit].description;
-      localRes.image = this.itemFlanco[gasit].image;
-      this.flancoLevenshteinOrdered.push(localRes);
-
     }
-    this.itemFlanco=this.flancoLevenshteinOrdered;
-
-    /*
-          ^
-          |
-          |
-        flanco
-     */
+    this.itemAltex=[];
+    this.itemFlanco=[];
+    this.emagLevenshteinOrdered=this.itemEmag;
+    this.itemEmag=[];
+    for(j=0;j<this.linePosition.length;j++)
+    {
+      this.itemFlanco.push(this.flancoLevenshteinOrdered[this.linePosition[j]]);
+      this.itemAltex.push(this.altexLevenshteinOrdered[this.linePosition[j]]);
+      this.itemEmag.push(this.emagLevenshteinOrdered[this.linePosition[j]]);
+      console.log(this.lineScore[j]);
+    }
 
 
   }
+
   addToFav(id:number){
     this.itemService.getById(id).subscribe(data => {
       this.itemtoadd = data;

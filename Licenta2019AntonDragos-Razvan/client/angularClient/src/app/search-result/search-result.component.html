@@ -17,12 +17,15 @@
     <div class="card_wrapper" *ngFor="let aux of itemEmag">
       <div class="card_main_content">
         <div class="card_image">
-          <img class="product-image"[src]="aux.image">
+          <a [href]="aux.productURL">
+            <img class="product-image"[src]="aux.image">
+          </a>
         </div>
         <div class="card_main_content_info">
           <div class="card_main_content-info-left">
             <h2>{{aux.stringPrice}}</h2>
           </div>
+
           <img class="card_main_content-info-right" width="150" src="https://s12emagst.akamaized.net/layout/ro/images/logo//38/57629.png">
 
         </div>
@@ -48,7 +51,9 @@
     <div class="card_wrapper" *ngFor="let aux of itemFlanco">
       <div class="card_main_content">
         <div class="card_image">
-          <img class="product-image"[src]="aux.image">
+          <a [href]="aux.productURL">
+            <img class="product-image"[src]="aux.image">
+          </a>
         </div>
         <div class="card_main_content_info">
           <div class="card_main_content-info-left">
@@ -80,7 +85,9 @@
     <div class="card_wrapper" *ngFor="let aux of itemAltex">
       <div class="card_main_content">
         <div class="card_image">
-          <img class="product-image"[src]="aux.image">
+          <a [href]="aux.productURL">
+            <img class="product-image"[src]="aux.image">
+          </a>
         </div>
         <div class="card_main_content_info">
           <div class="card_main_content-info-left">

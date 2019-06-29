@@ -11,6 +11,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
+@SuppressWarnings("Duplicates")
 public class FavoriteService {
     private FavoriteJpaRepository favoriteJpaRepository;
     private ItemService itemService;
@@ -36,6 +37,16 @@ public class FavoriteService {
         favorite.setNoOfFavorites(favorite.getNoOfFavorites()+1);
         Set<Item> oldList=favorite.getItems();
         oldList.add(itemService.getByIdFromDatabase(idItem));
+        favorite.setItems(oldList);
+        favoriteJpaRepository.save(favorite);
+        return itemService.getByIdFromDatabase(idItem);
+    }
+
+    public Item removeItemFromList(Long idFav,Long idItem){
+        Favorite favorite=this.favoriteJpaRepository.getOne(idFav);
+        favorite.setNoOfFavorites(favorite.getNoOfFavorites()+1);
+        Set<Item> oldList=favorite.getItems();
+        oldList.remove(itemService.getByIdFromDatabase(idItem));
         favorite.setItems(oldList);
         favoriteJpaRepository.save(favorite);
         return itemService.getByIdFromDatabase(idItem);

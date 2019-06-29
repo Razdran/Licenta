@@ -25,4 +25,19 @@ export class FavoriteServiceService {
         "image": null
       });
   }
+  removeFromFavoriteList(idFav:number,idItem:number):Observable<any>{
+    console.log("incerc sa apelez pentru idFav:"+idFav+" si itemul "+idItem);
+    return this.http.put('//localhost:8080/favorites/removeItem/'+idFav+'/'+idItem,
+      {
+        "id": 1,
+        "name": "item1",
+        "description": "desc1",
+        "category": "noCateg",
+        "price": 25.03,
+        "rating": 5,
+        "provider": "eMag",
+        "image": null
+      });
+  }
+
 }

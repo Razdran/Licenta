@@ -1,4 +1,5 @@
 <app-header></app-header>
+<!--
 <div class="home_wrapper">
 
   <div class="about_title">
@@ -70,4 +71,80 @@
       unui produs favorit scade sau când un produs apare în stoc la unul din cele trei magazine.
     </div>
   </div>
+</div>
+-->
+<div class="mainWrapper">
+  <div class="homeWrapper1" [hidden]="hide1">
+    <div class="providers">
+      <div class="section section1">
+        <mat-card class="provider_card">
+          <h1 class="card_title">Primul furnizor</h1>
+          <img class="providers_img  emagCard" width="250" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Logo_eMAG.svg/1280px-Logo_eMAG.svg.png">
+          <div class="card_info">eMAG este o companie din România care se ocupă cu vânzarea online de echipamente și
+            componente IT, electronice, electrocasnice, articole de îngrijire personală, produse auto, articole sportive,
+            cărți, muzică, filme, produse pentru casă și grădină, petshop, articole pentru copii,etc.
+            eMAG este cel mai de succes site de vânzări online din România.</div>
+        </mat-card>
+      </div>
+      <div class="section section2">
+        <mat-card class="provider_card">
+
+          <h1 class="card_title">Al doilea furnizor</h1>
+          <img class="providers_img" width="250" src="https://upload.wikimedia.org/wikipedia/ro/9/9d/Logo_Altex.svg">
+          <div class="card_info">Altex este o companie din România, cu sediul în Voluntari, care comercializează,
+            pe altex.ro și în rețeaua națională de magazine, produse electronice, echipamente și componente IT,
+            electrocasnice mari, electrocasnice mici,etc. În februarie 2018, compania are 128 de magazine (dintre care
+            19 sunt unități Media Galaxy). </div>
+        </mat-card>
+      </div>
+      <div class="section section3">
+        <mat-card class="provider_card">
+
+          <h1 class="card_title">Al treilea furnizor</h1>
+          <img class="providers_img flancoCard" width="250" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flanco_logo.svg">
+          <div class="card_info">Flanco și Flanco World sunt două rețele de magazine de produse electronice, electrocasnice
+            și IT&C din România, operate de compania Flamingo. Compania a fost înființată de omul de afaceri Florin
+            Andronescu, iar numele Flanco vine de la Florin Andronescu Company. Flanco are 135 de magazine în 95 de
+            orașe din România.</div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="homeWrapper2" [hidden]="hide2">
+
+    <div class="aboutApp">
+      <div class="section section4">
+        <mat-card>
+          <h1>Despre BuyCheap</h1>
+          <img class="aboutImg" width="400" src="../../assets/logo.png">
+          <div class="about_info">
+            Această aplicație are ca scop să vină în ajutorul userilor care își doresc să cumpere un produs
+            și își doresc să vadă care este cel mai bun preț pe care il pot obține la 3 dintre cele mai mari
+            magazine online din România. BuyCheap permite userilor să caute un produs iar aplicația va economisi
+            timpul userului căutând prețul acelui obiect pe cele 3 site-uri.
+            Un alt feature important al aplicației este acela că permite userilor să adauge un produs la lista lor
+            de favorite, fapt care va face ca acesta să fie anunțat prin e-mail atunci când prețul produsului scade
+            sau când produsul apare din nou în stoc la unul din cele trei magazine.
+          </div>
+        </mat-card>
+      </div>
+      <div class="section section5">
+        <mat-card>
+          <h1>De ce ai alege BuyCheap?</h1>
+          <div class="whyMyApp_info">
+            Un astfel de site  există deja în România, iar acesta este www.compari.ro , insă pe acest site se compară prețul produsului
+            de pe 200 alte site-uri partenere.  Un număr mai mare de site-uri, deși sună a o idee bună, îngreunează probabilitatea de a vedea
+            ofertele disponibile pe cele mai mari site-uri de e-commerce din România. Aplicația BuyCheap permite userilor să adauge anumite
+            produse la lista de favorite și să aleagă să fie notificați când prețul unui produs favorit scade sau când un produs apare în stoc
+            la unul din cele trei magazine.
+          </div>
+          <img class="providers_img_svg" width="500" src="../../assets/Capture.jpg">
+
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <button id="left" class="buttonLeft" (click)="left()">&#8249;</button>
+  <button id="right"  class="buttonRight" (click)="right()">&#8250;</button>
 </div>

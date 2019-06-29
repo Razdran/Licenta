@@ -1,3 +1,4 @@
+/*
 .home_wrapper{
   padding-top: 20px;
   padding-left: 50px;
@@ -74,4 +75,101 @@ img{
 }
 .profile a{
   font-size: 20px;
+}
+*/
+[hidden] { display: none !important;}
+.mainWrapper{
+
+  margin-left:5%;
+  margin-top:20px;
+  width: 90%;
+  min-height: 650px;
+}
+.homeWrapper1{
+  display: grid;
+}
+
+.homeWrapper2{
+  display: grid;
+}
+.providers{
+  height: 650px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "first second third";
+}
+.aboutApp{
+  width: 100%;
+  height: 650px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "info whatsNew";
+}
+.section{
+}
+.section1{
+  grid-area: first;
+}
+.section2{
+  grid-area:second;
+}
+.section3{
+  grid-area: third;
+}
+.section4{
+  grid-area: info;
+}
+.section5{
+  grid-area: whatsNew;
+}
+button{
+  border-radius: 50%;
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+}
+.buttonLeft {
+  left: 0%;
+}
+.buttonRight{
+  left:98.5%;
+}
+mat-card{
+  height:95%;
+  width:90%;
+  text-align: center;
+}
+h1{
+
+  font-family: fantasy;
+  font-weight: bold;
+  font-size: 40px;
+}
+.providers_img{
+  margin-bottom: 30px;
+}
+.card_info{
+  font-size: 26px;
+  font-family: fantasy;
+}
+.emagCard{
+  margin-bottom: 50px;
+}
+.flancoCard{
+  margin-bottom: 60px;
+}
+.aboutImg{
+  margin-bottom: 30px;
+  background-color: #319177;
+}
+.about_info{
+  font-size: 24px;
+  font-family: fantasy;
+}
+.whyMyApp_info{
+  font-size: 24px;
+  font-family: fantasy;
 }

@@ -45,6 +45,13 @@ public class FavoriteController {
 
         return favoriteService.addItemToList(idFav,idItem);
     }
+    @PutMapping(value="/removeItem/{idFav}/{idItem}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public Item removeItemFromFav(@PathVariable Long idItem,@PathVariable Long idFav,@RequestBody Item item){
+        System.out.println("Trying to remove item "+idItem+" from "+idFav);
+
+        return favoriteService.removeItemFromList(idFav,idItem);
+    }
 
     @GetMapping(value="/allItems/{idFav}")
     @CrossOrigin(origins = "http://localhost:4200")

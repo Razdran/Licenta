@@ -51,6 +51,12 @@ export class SearchResultComponent implements OnInit {
               private userService:UserServiceService) { }
 
   async search(text:string){
+
+    this.altexLevenshteinOrdered=[];
+    this.flancoLevenshteinOrdered=[];
+    this.emagLevenshteinOrdered=[];
+    this.lineScore=[];
+    this.linePosition=[];
     this.isLoading=true;
       this.nameToSearch = text;
       this.done=false;
@@ -119,23 +125,30 @@ export class SearchResultComponent implements OnInit {
 
   }
 
-  levenshtein(a, b) {
-    var t = [], result, i, j, aLen = a.length, bLen = b.length;
-    if (aLen==0){
-      return bLen;
+  levenshtein(first, second) {
+    var aux = [];
+    var result, i, j;
+    var firstLen = first.length;
+    var secondLen = second.length;
+    if (firstLen==0){
+      return secondLen;
     }
-    if (bLen==0){
-      return aLen;
+    if (secondLen==0){
+      return firstLen;
     }
-    for (j = 0; j <= bLen; j++) {
-      t[j] = j;
+    for (j = 0; j <= secondLen; j++) {
+      aux[j] = j;
     }
-    for (i = 1; i <= aLen; i++) {
-      for (result = [i], j = 1; j <= bLen; j++) {
-        result[j] = a[i - 1] === b[j - 1] ? t[j - 1] : Math.min(t[j - 1], t[j], result[j - 1]) + 1;
-      } t = result;
-    } return result[bLen];
+    for (i = 1; i <= firstLen; i++) {
+      for (result = [i], j = 1; j <= secondLen; j++) {
+          if(first[i - 1] === second[j - 1] )
+            result[j] = aux[j - 1]
+          else
+            result[j]=Math.min(aux[j - 1], aux[j], result[j - 1]) + 1;
+      } aux = result;
+    } return result[secondLen];
   }
+
   LevenshteinOrder() {
     this.nrLines=0;
     this.altexLevenshteinOrdered=[];
@@ -176,6 +189,7 @@ export class SearchResultComponent implements OnInit {
         localRes.image = this.itemFlanco[gasit].image;
         localRes.productURL=this.itemFlanco[gasit].productURL;
         localRes.productCode=this.itemFlanco[gasit].productCode;
+        localRes.id=this.itemFlanco[gasit].id;
       }
       this.flancoLevenshteinOrdered.push(localRes);
 
@@ -219,6 +233,7 @@ export class SearchResultComponent implements OnInit {
         localRes.image = this.itemAltex[gasit].image;
         localRes.productURL=this.itemAltex[gasit].productURL;
         localRes.productCode=this.itemAltex[gasit].productCode;
+        localRes.id=this.itemAltex[gasit].id;
       }
       this.altexLevenshteinOrdered.push(localRes);
     }

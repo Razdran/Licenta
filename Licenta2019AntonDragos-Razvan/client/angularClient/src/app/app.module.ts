@@ -22,6 +22,7 @@ import {MatButtonModule,MatSnackBarModule} from '@angular/material'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material';
 import {MatIconModule} from "@angular/material";
+import {MatCardModule} from "@angular/material";
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import {MatIconModule} from "@angular/material";
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [ItemServiceService,UserServiceService,FavoriteServiceService,ScrappingServiceService],
   bootstrap: [AppComponent]

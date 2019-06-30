@@ -12,6 +12,7 @@ import {FavoriteServiceService} from "../services/favoriteService/favorite-servi
 import {ItemServiceService} from "../services/itemService/item-service.service";
 import {UserServiceService} from "../services/userService/user-service.service";
 import {Observable} from "rxjs";
+import {MatSnackBar} from "@angular/material";
 
 @Pipe({ name: 'safe' })
 export class SafePipe implements PipeTransform {
@@ -48,7 +49,7 @@ export class SearchResultComponent implements OnInit {
   isLoading:boolean
   constructor(private scrap:ScrappingServiceService,private  shared:SharedDataService,private router:Router,
               private favoriteService:FavoriteServiceService, private itemService:ItemServiceService,
-              private userService:UserServiceService) { }
+              private userService:UserServiceService,public snackBar: MatSnackBar) { }
 
   async search(text:string){
 
@@ -280,6 +281,9 @@ export class SearchResultComponent implements OnInit {
     this.itemService.getById(id).subscribe(data => {
       this.itemtoadd = data;
       this.favoriteService.addToFavoriteList(this.shared.favId, id).subscribe(data=>{
+        this.snackBar.open("Item added to favorites", "ok", {
+          duration: 2000,
+        });
       });
     });
   }

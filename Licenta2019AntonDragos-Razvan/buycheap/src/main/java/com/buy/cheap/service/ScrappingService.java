@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.IIOException;
@@ -23,6 +24,15 @@ import java.util.Map;
 public class ScrappingService {
 
     @SuppressWarnings("Duplicates")
+    public ChromeDriver driver;
+
+    @Autowired
+    public ScrappingService(){
+        System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless","--no-proxy-server","--proxy-server='direct://'","--proxy-bypass-list=*");
+        driver=new ChromeDriver(options);
+    }
     public List<ItemDAO> getItemFromEmag(String name)
     {
         List<ItemDAO> result=new ArrayList<ItemDAO>();
@@ -33,10 +43,6 @@ public class ScrappingService {
             urlCautare+=aux+"%20";
         }
         urlCautare="https://www.emag.ro/search/"+urlCautare+"?ref=effective_search";
-        System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        ChromeDriver driver = new ChromeDriver(options);
         driver.get(urlCautare);
         Document doc = Jsoup.parse(driver.getPageSource());
 
@@ -75,7 +81,6 @@ public class ScrappingService {
                 i++;
             }
         }
-        driver.quit();
         return result;
     }
     @SuppressWarnings("Duplicates")
@@ -89,11 +94,6 @@ public class ScrappingService {
             {
                 urlCautare+=aux+"+";
             }
-            System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            ChromeDriver driver = new ChromeDriver(options);
-
             driver.get("https://www.flanco.ro/catalogsearch/result/?q="+urlCautare);
             Document doc = Jsoup.parse(driver.getPageSource());
 
@@ -128,7 +128,6 @@ public class ScrappingService {
                 }
 
             }
-            driver.quit();
             return result;
         }
 
@@ -144,11 +143,6 @@ public class ScrappingService {
             {
                 urlCautare+=aux+"%2520";
             }
-            System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            ChromeDriver driver = new ChromeDriver(options);
-
             driver.get("https://altex.ro/cauta/?q="+urlCautare);
             Document doc = Jsoup.parse(driver.getPageSource());
 
@@ -176,7 +170,6 @@ public class ScrappingService {
                     }
                 }
             }
-            driver.quit();
             return result;
         }
     }
@@ -242,10 +235,6 @@ public class ScrappingService {
         Map<String,String> result=new HashMap<>();
 
 
-        System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        ChromeDriver driver = new ChromeDriver(options);
         driver.get(link);
         Document doc = Jsoup.parse(driver.getPageSource());
         Element mainContent=doc.getElementsByClass("page-section page-section-light").first();
@@ -261,7 +250,6 @@ public class ScrappingService {
         result.put("price",newPrice);
 
 
-        driver.quit();
         return result;
 
     }
@@ -269,10 +257,6 @@ public class ScrappingService {
         Map<String,String> result=new HashMap<>();
 
 
-        System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        ChromeDriver driver = new ChromeDriver(options);
         driver.get(link);
         Document doc = Jsoup.parse(driver.getPageSource());
         Element mainContent=doc.getElementsByClass("Product").first();
@@ -285,17 +269,12 @@ public class ScrappingService {
 
         result.put("price",newPrice);
 
-        driver.quit();
         return result;
 
     }
     public Map<String,String> getPriceUpdateFlanco(String link){
         Map<String,String> result=new HashMap<>();
 
-        System.setProperty("webdriver.chrome.driver","D:\\chromeDriver4\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        ChromeDriver driver = new ChromeDriver(options);
         driver.get(link);
         Document doc = Jsoup.parse(driver.getPageSource());
         Element mainContent=doc.getElementsByClass("product-wrapp").first();
@@ -312,7 +291,6 @@ public class ScrappingService {
 
 
 
-        driver.quit();
         return result;
     }
 }

@@ -58,7 +58,7 @@ public class sendEmailsWhenPromotionsAppear {
                     updated = scrappingService.getPriceUpdateEmag(produs.getProductURL());
                     if (!updated.get("stoc").equals(oldStatus) || Integer.parseInt(oldPrice) > Integer.parseInt(updated.get("price"))) {
                         toNotify += "A apărut o modificare la produsul " + produs.getName() + " din lista ta de favorite. \nPrețul actual: " +
-                                updated.get("price") + ". \nStatusul actual: " + updated.get("stoc") + ". \nAceste modificări au sunt făcute" +
+                                updated.get("price") + ". \nStatusul actual: " + updated.get("stoc") + ". \nAceste modificări sunt făcute" +
                                 " de către furnizorul " + produs.getProvider()+"\n";
                         System.out.println("emag"+updated.get("stoc"));
                         itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
@@ -68,7 +68,7 @@ public class sendEmailsWhenPromotionsAppear {
                     updated = scrappingService.getPriceUpdateAltex(produs.getProductURL());
                     if (!updated.get("stoc").equals(oldStatus) || Integer.parseInt(oldPrice) > Integer.parseInt(updated.get("price"))) {
                         toNotify += "A apărut o modificare la produsul " + produs.getName() + " din lista ta de favorite.\n Prețul actual: " +
-                                updated.get("price") + ".\n Statusul actual: " + updated.get("stoc") + ". \nAceste modificări au sunt făcute" +
+                                updated.get("price") + ".\n Statusul actual: " + updated.get("stoc") + ". \nAceste modificări sunt făcute" +
                                 " de către furnizorul " + produs.getProvider()+"\n";
                         System.out.println("altex"+updated.get("stoc"));
 
@@ -79,7 +79,7 @@ public class sendEmailsWhenPromotionsAppear {
                     updated = scrappingService.getPriceUpdateFlanco(produs.getProductURL());
                     if (!updated.get("stoc").equals(oldStatus) || Integer.parseInt(oldPrice) > Integer.parseInt(updated.get("price"))) {
                         toNotify += "A apărut o modificare la produsul " + produs.getName() + " din lista ta de favorite.\n Prețul actual: " +
-                                updated.get("price") + ". \nStatusul actual: " + updated.get("stoc") + ". \nAceste modificări au sunt făcute" +
+                                updated.get("price") + ". \nStatusul actual: " + updated.get("stoc") + ". \nAceste modificări sunt făcute" +
                                 " de către furnizorul " + produs.getProvider()+"\n";
                         System.out.println("flanco"+updated.get("stoc"));
 
@@ -89,8 +89,8 @@ public class sendEmailsWhenPromotionsAppear {
             }
             if (toNotify != "") {
                 mailsSent++;
-                this.emailService.send("anton.razvan1997@gmail.com", user.getEmail(),
-                        "Niniesefamea10", "BuyCheap", toNotify);
+                this.emailService.send("buycheapiasi@gmail.com", user.getEmail(),
+                        "BuyCheapIasi10", "BuyCheap", toNotify);
 
             }
         }

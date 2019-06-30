@@ -14,17 +14,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
+            <state relative-caret-position="617">
+              <caret line="283" column="51" selection-start-line="283" selection-start-column="51" selection-end-line="283" selection-end-column="51" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
                 <element signature="n#!!block;n#makePriceLookGood2#0;n#SearchResultComponent#0" />
                 <element signature="n#!!block;n#makePriceLookGood3#0;n#SearchResultComponent#0" />
                 <element signature="n#!!block;n#levenshtein#0;n#SearchResultComponent#0" />
-                <element signature="n#!!block;n#addToFav#0;n#SearchResultComponent#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/angularClient/src/app/favorites/favorites.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2941">
+              <caret line="173" column="1" selection-start-line="173" selection-start-column="1" selection-end-line="173" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1212">
+              <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="30" column="11" selection-start-line="28" selection-start-column="7" selection-end-line="30" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,6 +112,7 @@
       <find>console.log</find>
       <find>font</find>
       <find>productURL</find>
+      <find>mat-icon</find>
     </findStrings>
     <replaceStrings>
       <replace>StringPrice</replace>
@@ -89,15 +140,12 @@
         <option value="$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.html" />
         <option value="$PROJECT_DIR$/angularClient/src/app/create-account-page/create-account-page.component.html" />
         <option value="$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.ts" />
-        <option value="$PROJECT_DIR$/angularClient/src/app/favorites/favorites.component.html" />
         <option value="$PROJECT_DIR$/angularClient/src/app/item.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/user-profile/user-profile.component.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/services/scrappingService/scrapping-service.service.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/angularClient/src/app/header/header.component.css" />
-        <option value="$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.css" />
-        <option value="$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.html" />
         <option value="$PROJECT_DIR$/angularClient/src/app/header/header.component.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/home-page/home-page.component.ts" />
@@ -106,7 +154,10 @@
         <option value="$PROJECT_DIR$/angularClient/src/app/services/favoriteService/favorite-service.service.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/favorites/favorites.component.ts" />
         <option value="$PROJECT_DIR$/angularClient/src/app/user-profile/user-profile.component.css" />
+        <option value="$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.html" />
+        <option value="$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.css" />
         <option value="$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.ts" />
+        <option value="$PROJECT_DIR$/angularClient/src/app/favorites/favorites.component.html" />
       </list>
     </option>
   </component>
@@ -120,6 +171,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -151,14 +203,29 @@
               <item name="angularClient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="user-profile" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="favorites" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="client" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="client" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="angularClient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="login-page" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="client" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="client" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="angularClient" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="search-result" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,16 +287,18 @@
       <workItem from="1561736946215" duration="17122000" />
       <workItem from="1561820205311" duration="7479000" />
       <workItem from="1561834488935" duration="8282000" />
+      <workItem from="1561924975865" duration="593000" />
+      <workItem from="1561933138081" duration="762000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225259000" />
+    <option name="totallyTimeSpent" value="226614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.21409395" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.21946308" />
       <window_info id="Structure" order="1" sideWeight="0.504329" side_tool="true" weight="0.17919463" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -292,13 +361,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/angularClient/src/test.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="17" lean-forward="true" selection-end-line="43" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/angularClient/src/app/create-account-page/create-account-page.component.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -428,16 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angularClient/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -469,13 +521,6 @@
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2873">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
         </state>
       </provider>
     </entry>
@@ -524,23 +569,6 @@
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularClient/src/app/favorites/favorites.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="56" column="73" lean-forward="true" selection-start-line="56" selection-start-column="73" selection-end-line="56" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -606,15 +634,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
+        <state relative-caret-position="617">
+          <caret line="283" column="51" selection-start-line="283" selection-start-column="51" selection-end-line="283" selection-end-column="51" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
             <element signature="n#!!block;n#makePriceLookGood2#0;n#SearchResultComponent#0" />
             <element signature="n#!!block;n#makePriceLookGood3#0;n#SearchResultComponent#0" />
             <element signature="n#!!block;n#levenshtein#0;n#SearchResultComponent#0" />
-            <element signature="n#!!block;n#addToFav#0;n#SearchResultComponent#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="1" selection-start-line="173" selection-start-column="1" selection-end-line="173" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularClient/src/app/login-page/login-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="30" column="11" selection-start-line="28" selection-start-column="7" selection-end-line="30" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularClient/src/app/search-result/search-result.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1212">
+          <caret line="106" column="35" selection-start-line="106" selection-start-column="35" selection-end-line="106" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularClient/src/app/favorites/favorites.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
         </state>
       </provider>
     </entry>

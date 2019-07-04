@@ -64,6 +64,10 @@ public class sendEmailsWhenPromotionsAppear {
                         itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
 
                     }
+
+                    if( Integer.parseInt(oldPrice) < Integer.parseInt(updated.get("price"))){
+                        itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
+                    }
                 } else if (produs.getProvider().equals("Altex")) {
                     updated = scrappingService.getPriceUpdateAltex(produs.getProductURL());
                     if (!updated.get("stoc").equals(oldStatus) || Integer.parseInt(oldPrice) > Integer.parseInt(updated.get("price"))) {
@@ -72,6 +76,9 @@ public class sendEmailsWhenPromotionsAppear {
                                 " de către furnizorul " + produs.getProvider()+"\n";
                         System.out.println("altex"+updated.get("stoc"));
 
+                        itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
+                    }
+                    if( Integer.parseInt(oldPrice) < Integer.parseInt(updated.get("price"))){
                         itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
                     }
 
@@ -83,6 +90,10 @@ public class sendEmailsWhenPromotionsAppear {
                                 " de către furnizorul " + produs.getProvider()+"\n";
                         System.out.println("flanco"+updated.get("stoc"));
 
+                        itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
+                    }
+
+                    if( Integer.parseInt(oldPrice) < Integer.parseInt(updated.get("price"))){
                         itemService.updatePriceAndStatus(produs.getId(),updated.get("price"),updated.get("stoc"));
                     }
                 }
